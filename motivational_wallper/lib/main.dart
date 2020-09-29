@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import './quotes.dart';
+import 'dart:math';
 
 void main() {
   runApp(MyApp());
+  var randomNumber = new Random();
+  for (var i = 0; i < 10; i++) {
+    referenceNumber = randomNumber.nextInt(3);
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -19,20 +24,21 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[300], 
+      
+      backgroundColor: Colors.blue[100], 
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
               
-              boxShadow: [BoxShadow( color: Colors.green[500], blurRadius: 10.0, offset: Offset(0.0,0.0))]
+              boxShadow: [BoxShadow( color: Colors.blueGrey[400], blurRadius: 100.0, offset: Offset(0.0,0.0))]
             ),
             child: Text(
               MotivationalQuotes(),
@@ -40,13 +46,14 @@ class MyHomePage extends StatelessWidget {
                 fontSize: 25,
                 color: Colors.white,
               ),
+              textAlign: TextAlign.center,
             ),
             
           ),
           Container(
             decoration: BoxDecoration(
               
-              boxShadow: [BoxShadow( color: Colors.green[500], blurRadius: 9.0, offset: Offset(0.0,0.0))]
+              boxShadow: [BoxShadow( color: Colors.blueGrey[500], blurRadius: 50.0, offset: Offset(0.0,0.0))]
             ),
             child: Text(
               MotivationalQuoteAuthor(),
@@ -61,7 +68,8 @@ class MyHomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: MotivationalQuotes,
-        backgroundColor: Colors.green[800],
+
+        backgroundColor: Colors.blue[800],
         child: Text(
           "Refresh",
           style: TextStyle(fontSize: 13),
